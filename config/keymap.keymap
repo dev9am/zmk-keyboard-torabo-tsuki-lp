@@ -2,7 +2,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/pointing.h>
 
 / {
     combos {
@@ -20,21 +19,21 @@
 
         layer_0 {
             bindings = <
-&none  &none             &none         &none         &none             &none                                          &none        &none  &none  &none     &none              &none
-&none  &kp MINUS         &kp L         &kp U         &kp PERIOD        &kp ESC                                        &kp F        &kp W  &kp R  &kp Y     &kp P              &none
-&none  &mt LCTRL E       &kp I         &kp A         &kp O             &kp COMMA    &none      &mkp RCLK              &kp K        &kp T  &kp N  &kp S     &mt RCTRL H        &none
-&none  &mt LEFT_SHIFT Q  &kp Z         &kp X         &kp C             &kp V        &kp SPACE  &kp RET                &kp G        &kp D  &kp M  &kp J     &mt RIGHT_SHIFT B  &none
-&none  &kp F7            &kp LEFT_ALT  &kp CAPSLOCK  &kp LEFT_COMMAND  &lt 2 SPACE  &lt 2 TAB  &mt RSHIFT LANGUAGE_2  &lt 3 ENTER  &none  &none  &kp RGUI  &kp RCTRL          &none
+&none  &none             &none         &none         &none             &none                                    &none        &none  &none  &none     &none              &none
+&none  &kp MINUS         &kp L         &kp U         &kp PERIOD        &kp ESC                                  &kp F        &kp W  &kp R  &kp Y     &kp P              &none
+&none  &mt LCTRL E       &kp I         &kp A         &kp O             &kp COMMA    &none      &none            &kp K        &kp T  &kp N  &kp S     &mt RCTRL H        &none
+&none  &mt LEFT_SHIFT Q  &kp Z         &kp X         &kp C             &kp V        &kp SPACE  &kp RET          &kp G        &kp D  &kp M  &kp J     &mt RIGHT_SHIFT B  &none
+&none  &kp F7            &kp LEFT_ALT  &kp CAPSLOCK  &kp LEFT_COMMAND  &lt 3 SPACE  &lt 2 TAB  &lt 4 BACKSPACE  &lt 1 ENTER  &none  &none  &kp RGUI  &kp RCTRL          &none
             >;
         };
 
         layer_1 {
             bindings = <
-&trans  &trans  &trans  &trans     &trans     &trans                  &trans  &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans     &trans                  &trans  &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &mkp RCLK  &mkp LCLK  &trans  &trans  &trans  &trans  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans
+&trans  &trans            &trans           &trans             &trans                &trans                                            &trans             &trans                 &trans           &trans            &trans             &trans
+&trans  &kp QUESTION      &kp EXCLAMATION  &kp AMPERSAND      &kp PIPE              &kp NON_US_BACKSLASH                              &kp PLUS           &kp ASTERISK           &kp EQUAL        &kp SLASH         &kp PERCENT        &trans
+&trans  &kp LEFT_BRACKET  &kp LESS_THAN    &kp LEFT_BRACE     &kp LEFT_PARENTHESIS  &kp TILDE             &trans          &trans      &kp GRAVE          &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp GREATER_THAN  &kp RIGHT_BRACKET  &trans
+&trans  &trans            &kp DOLLAR       &kp HASH           &kp COLON             &kp SQT               &trans          &trans      &kp DOUBLE_QUOTES  &kp SEMICOLON          &kp AT_SIGN      &trans            &trans             &trans
+&trans  &trans            &trans           &kp LS(LA(LC(B)))  &trans                &kp LANGUAGE_2        &kp LANGUAGE_1  &kp DELETE  &trans             &trans                 &trans           &trans            &trans             &trans
             >;
         };
 
@@ -55,6 +54,16 @@
 &trans  &kp F6   &kp F7   &kp F8        &kp F9        &kp F10     &trans  &trans  &kp LEFT          &kp DOWN   &kp UP_ARROW   &kp RIGHT  &kp TAB     &trans
 &trans  &kp F11  &kp F12  &out OUT_USB  &out OUT_BLE  &bt BT_NXT  &trans  &trans  &kp SINGLE_QUOTE  &kp DQT    &kp GRAVE      &kp TILDE  &kp PIPE    &trans
 &trans  &trans   &trans   &trans        &kp DELETE    &kp TAB     &trans  &trans  &trans            &trans     &trans         &trans     &trans      &trans
+            >;
+        };
+
+        layer_4 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
