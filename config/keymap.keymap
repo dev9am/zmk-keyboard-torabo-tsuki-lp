@@ -2,6 +2,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
 
 / {
     combos {
@@ -49,11 +50,11 @@
 
         layer_3 {
             bindings = <
-&trans  &trans   &trans   &trans        &trans        &trans                      &trans            &trans     &trans         &trans     &trans      &trans
-&trans  &kp F1   &kp F2   &kp F3        &kp F4        &kp F5                      &kp HOME          &kp PG_UP  &kp PAGE_DOWN  &kp END    &kp ESCAPE  &trans
-&trans  &kp F6   &kp F7   &kp F8        &kp F9        &kp F10     &trans  &trans  &kp LEFT          &kp DOWN   &kp UP_ARROW   &kp RIGHT  &kp TAB     &trans
-&trans  &kp F11  &kp F12  &out OUT_USB  &out OUT_BLE  &bt BT_NXT  &trans  &trans  &kp SINGLE_QUOTE  &kp DQT    &kp GRAVE      &kp TILDE  &kp PIPE    &trans
-&trans  &trans   &trans   &trans        &kp DELETE    &kp TAB     &trans  &trans  &trans            &trans     &trans         &trans     &trans      &trans
+&trans  &trans   &trans   &trans        &trans        &trans                             &trans          &trans            &trans           &trans              &trans               &trans
+&trans  &kp F1   &kp F2   &kp F3        &kp F4        &kp F5                             &kp LG(MINUS)   &kp LG(NUMBER_0)  &kp LG(PLUS)     &kp LS(LG(T))       &kp LG(LA(W))        &trans
+&trans  &kp F6   &kp F7   &kp F8        &kp F9        &kp F10     &trans  &trans         &kp UP_ARROW    &mkp LCLK         &mkp RCLK        &kp LG(L)           &kp LG(W)            &trans
+&trans  &kp F11  &kp F12  &out OUT_USB  &out OUT_BLE  &bt BT_NXT  &trans  &trans         &kp DOWN_ARROW  &kp LEFT_ARROW    &kp RIGHT_ARROW  &kp LS(LEFT_ARROW)  &kp LS(RIGHT_ARROW)  &trans
+&trans  &trans   &trans   &trans        &kp DELETE    &kp TAB     &trans  &kp LS(LG(R))  &kp LG(T)       &trans            &trans           &trans              &trans               &trans
             >;
         };
 
