@@ -10,7 +10,7 @@
 
         bt_clear {
             bindings = <&bt BT_CLR>;
-            key-positions = <28 29>;
+            key-positions = <13 14>;
             layers = <2>;
         };
     };
@@ -20,51 +20,46 @@
 
         layer_0 {
             bindings = <
-&none  &none             &none         &none         &none             &none                                    &none        &none  &none  &none     &none              &none
-&none  &kp MINUS         &kp L         &kp U         &kp PERIOD        &kp ESC                                  &kp F        &kp W  &kp R  &kp Y     &kp P              &none
-&none  &mt LCTRL E       &kp I         &kp A         &kp O             &kp COMMA    &none      &none            &kp K        &kp T  &kp N  &kp S     &mt RCTRL H        &none
-&none  &mt LEFT_SHIFT Q  &kp Z         &kp X         &kp C             &kp V        &kp SPACE  &kp RET          &kp G        &kp D  &kp M  &kp J     &mt RIGHT_SHIFT B  &none
-&none  &kp F7            &kp LEFT_ALT  &kp CAPSLOCK  &kp LEFT_COMMAND  &lt 3 SPACE  &lt 2 TAB  &lt 4 BACKSPACE  &lt 1 ENTER  &none  &none  &kp RGUI  &kp RCTRL          &none
+&kp MINUS         &kp L         &kp U         &kp PERIOD        &kp ESC                                  &kp F        &kp W  &kp R  &kp Y     &kp P
+&mt LCTRL E       &kp I         &kp A         &kp O             &kp COMMA                                &kp K        &kp T  &kp N  &kp S     &mt RCTRL H
+&mt LEFT_SHIFT Q  &kp Z         &kp X         &kp C             &kp V        &kp SPACE  &kp RET          &kp G        &kp D  &kp M  &kp J     &mt RIGHT_SHIFT B
+&kp F7            &kp LEFT_ALT  &kp CAPSLOCK  &kp LEFT_COMMAND  &lt 3 SPACE  &lt 2 TAB  &lt 4 BACKSPACE  &lt 1 ENTER  &none  &none  &kp RGUI  &kp RCTRL
             >;
         };
 
         layer_1 {
             bindings = <
-&trans  &trans            &trans           &trans             &trans                &trans                                            &trans             &trans                 &trans           &trans            &trans             &trans
-&trans  &kp QUESTION      &kp EXCLAMATION  &kp AMPERSAND      &kp PIPE              &kp NON_US_BACKSLASH                              &kp PLUS           &kp ASTERISK           &kp EQUAL        &kp SLASH         &kp PERCENT        &trans
-&trans  &kp LEFT_BRACKET  &kp LESS_THAN    &kp LEFT_BRACE     &kp LEFT_PARENTHESIS  &kp TILDE             &trans          &trans      &kp GRAVE          &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp GREATER_THAN  &kp RIGHT_BRACKET  &trans
-&trans  &trans            &kp DOLLAR       &kp HASH           &kp COLON             &kp SQT               &trans          &trans      &kp DOUBLE_QUOTES  &kp SEMICOLON          &kp AT_SIGN      &trans            &trans             &trans
-&trans  &trans            &trans           &kp LS(LA(LC(B)))  &trans                &kp LANGUAGE_2        &kp LANGUAGE_1  &kp DELETE  &trans             &trans                 &trans           &trans            &trans             &trans
+&kp QUESTION      &kp EXCLAMATION  &kp AMPERSAND      &kp PIPE              &kp NON_US_BACKSLASH                              &kp PLUS           &kp ASTERISK           &kp EQUAL        &kp SLASH         &kp PERCENT
+&kp LEFT_BRACKET  &kp LESS_THAN    &kp LEFT_BRACE     &kp LEFT_PARENTHESIS  &kp TILDE                                        &kp GRAVE          &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp GREATER_THAN  &kp RIGHT_BRACKET
+&trans            &kp DOLLAR       &kp HASH           &kp COLON             &kp SQT               &trans          &trans      &kp DOUBLE_QUOTES  &kp SEMICOLON          &kp AT_SIGN      &trans            &trans
+&trans            &trans           &kp LS(LA(LC(B)))  &trans                &kp LANGUAGE_2        &kp LANGUAGE_1  &kp DELETE  &trans             &trans                 &trans           &trans            &trans
             >;
         };
 
         layer_2 {
             bindings = <
-&trans  &trans            &trans            &trans      &trans      &trans                          &trans             &trans        &trans        &trans        &trans        &trans
-&trans  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(N3)  &kp LS(N4)  &kp LS(N5)                      &kp NUMBER_7       &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp EQUAL     &trans
-&trans  &kp N1            &kp N2            &kp N3      &kp N4      &kp N5      &trans  &trans      &kp NUMBER_4       &kp NUMBER_5  &kp NUMBER_6  &kp MINUS     &kp SLASH     &trans
-&trans  &kp N6            &kp N7            &kp N8      &kp N9      &kp N0      &trans  &trans      &kp NUMBER_1       &kp NUMBER_2  &kp NUMBER_3  &kp PLUS      &kp ASTERISK  &trans
-&trans  &trans            &trans            &trans      &trans      &trans      &trans  &kp DELETE  &kp RIGHT_COMMAND  &none         &trans        &trans        &trans        &trans
+&kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(N3)  &kp LS(N4)  &kp LS(N5)                      &kp NUMBER_7       &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp EQUAL
+&kp N1            &kp N2            &kp N3      &kp N4      &kp N5                          &kp NUMBER_4       &kp NUMBER_5  &kp NUMBER_6  &kp MINUS     &kp SLASH
+&kp N6            &kp N7            &kp N8      &kp N9      &kp N0      &trans  &trans      &kp NUMBER_1       &kp NUMBER_2  &kp NUMBER_3  &kp PLUS      &kp ASTERISK
+&trans            &trans            &trans      &trans      &trans      &trans  &kp DELETE  &kp RIGHT_COMMAND  &none         &trans        &trans        &trans
             >;
         };
 
         layer_3 {
             bindings = <
-&trans  &trans   &trans   &trans        &trans        &trans                             &trans          &trans            &trans           &trans              &trans               &trans
-&trans  &kp F1   &kp F2   &kp F3        &kp F4        &kp F5                             &kp LG(MINUS)   &kp LG(NUMBER_0)  &kp LG(PLUS)     &kp LS(LG(T))       &kp LG(LA(W))        &trans
-&trans  &kp F6   &kp F7   &kp F8        &kp F9        &kp F10     &trans  &trans         &kp UP_ARROW    &mkp LCLK         &mkp RCLK        &kp LG(L)           &kp LG(W)            &trans
-&trans  &kp F11  &kp F12  &out OUT_USB  &out OUT_BLE  &bt BT_NXT  &trans  &trans         &kp DOWN_ARROW  &kp LEFT_ARROW    &kp RIGHT_ARROW  &kp LS(LEFT_ARROW)  &kp LS(RIGHT_ARROW)  &trans
-&trans  &trans   &trans   &trans        &kp DELETE    &kp TAB     &trans  &kp LS(LG(R))  &kp LG(T)       &trans            &trans           &trans              &trans               &trans
+&kp F1   &kp F2   &kp F3        &kp F4        &kp F5                             &kp LG(MINUS)   &kp LG(NUMBER_0)  &kp LG(PLUS)     &kp LS(LG(T))       &kp LG(LA(W))
+&kp F6   &kp F7   &kp F8        &kp F9        &kp F10                            &kp UP_ARROW    &mkp LCLK         &mkp RCLK        &kp LG(L)           &kp LG(W)
+&kp F11  &kp F12  &out OUT_USB  &out OUT_BLE  &bt BT_NXT  &trans  &trans         &kp DOWN_ARROW  &kp LEFT_ARROW    &kp RIGHT_ARROW  &kp LS(LEFT_ARROW)  &kp LS(RIGHT_ARROW)
+&trans   &trans   &trans        &kp DELETE    &kp TAB     &trans  &kp LS(LG(R))  &kp LG(T)       &trans            &trans           &trans              &trans
             >;
         };
 
         layer_4 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
