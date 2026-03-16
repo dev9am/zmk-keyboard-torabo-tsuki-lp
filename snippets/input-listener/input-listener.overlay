@@ -1,4 +1,6 @@
 &pointing_listener {
     status = "okay";
     device = <&pointing_device>;
+    scale-multiplier = <3>;
+    scale-divisor = <4>;
 };
