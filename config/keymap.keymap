@@ -20,11 +20,11 @@
 
         layer_0 {
             bindings = <
-&none  &none             &none         &none         &none             &none                          &none  &none  &none  &none      &none              &none
-&none  &kp MINUS         &kp L         &kp U         &kp PERIOD        &kp ESC                        &kp F  &kp W  &kp R  &kp Y      &kp P              &none
-&none  &mt LCTRL E       &kp I         &kp A         &kp O             &kp COMMA    &none      &none  &kp K  &kp T  &kp N  &kp S      &mt RCTRL H        &none
-&none  &mt LEFT_SHIFT Q  &kp Z         &kp X         &kp C             &kp V        &kp SPACE  &kp O  &kp G  &kp D  &kp M  &kp J      &mt RIGHT_SHIFT B  &none
-&none  &kp F7            &kp LEFT_ALT  &kp CAPSLOCK  &kp LEFT_COMMAND  &lt 3 SPACE  &lt 2 TAB  &kp B  &kp A  &kp W  &kp P  &mkp LCLK  &mkp RCLK          &none
+&none  &none             &none         &none         &none             &none                                    &none        &none  &none  &none      &none              &none
+&none  &kp MINUS         &kp L         &kp U         &kp PERIOD        &kp ESC                                  &kp F        &kp W  &kp R  &kp Y      &kp P              &none
+&none  &mt LCTRL E       &kp I         &kp A         &kp O             &kp COMMA    &none      &none            &kp K        &kp T  &kp N  &kp S      &mt RCTRL H        &none
+&none  &mt LEFT_SHIFT Q  &kp Z         &kp X         &kp C             &kp V        &kp SPACE  &kp O            &kp G        &kp D  &kp M  &kp J      &mt RIGHT_SHIFT B  &none
+&none  &kp F7            &kp LEFT_ALT  &kp CAPSLOCK  &kp LEFT_COMMAND  &lt 3 SPACE  &lt 2 TAB  &lt 4 BACKSPACE  &lt 1 ENTER  &none  &none  &mkp LCLK  &mkp RCLK          &none
             >;
         };
 
@@ -40,11 +40,11 @@
 
         layer_2 {
             bindings = <
-&none  &none             &none             &none       &none       &none                           &none              &none         &none         &none         &none      &none
-&none  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(N3)  &kp LS(N4)  &kp LS(N5)                      &kp NUMBER_7       &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp EQUAL  &none
-&none  &kp N1            &kp N2            &kp N3      &kp N4      &kp N5      &none   &none       &kp NUMBER_4       &kp NUMBER_5  &kp NUMBER_6  &kp MINUS     &kp SLASH  &none
-&none  &kp N6            &kp N7            &kp N8      &kp N9      &kp N0      &trans  &trans      &kp NUMBER_1       &kp NUMBER_2  &kp NUMBER_3  &kp PLUS      &none      &none
-&none  &trans            &trans            &trans      &trans      &trans      &trans  &kp DELETE  &kp RIGHT_COMMAND  &none         &trans        &trans        &none      &none
+&none  &none             &none             &none       &none       &none                            &none              &none         &none         &none         &none      &none
+&none  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(N3)  &kp LS(N4)  &kp LS(F11)                      &kp NUMBER_7       &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp EQUAL  &none
+&none  &kp N1            &kp N2            &kp N3      &kp N4      &kp N5       &none   &none       &kp NUMBER_4       &kp NUMBER_5  &kp NUMBER_6  &kp MINUS     &kp SLASH  &none
+&none  &kp N6            &kp N7            &kp N8      &kp N9      &kp N0       &trans  &trans      &kp NUMBER_1       &kp NUMBER_2  &kp NUMBER_3  &kp PLUS      &none      &none
+&none  &trans            &trans            &trans      &trans      &trans       &trans  &kp DELETE  &kp RIGHT_COMMAND  &none         &trans        &trans        &none      &none
             >;
         };
 
