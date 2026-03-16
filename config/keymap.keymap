@@ -63,10 +63,10 @@
         layer_3 {
             bindings = <
 &none  &none    &none    &none         &none         &none                              &none           &none             &none            &none               &none          &none
-&none  &kp F1   &kp F2   &kp F3        &kp F4        &kp F5                             &kp LG(MINUS)   &kp LG(NUMBER_0)  &kp LG(PLUS)     &kp LS(LG(T))       &kp LG(LA(W))  &none
-&none  &kp F6   &kp F7   &kp F8        &kp F9        &kp F10     &none   &none          &kp UP_ARROW    &mkp LCLK         &mkp RCLK        &kp LG(L)           &kp LG(W)      &none
-&none  &kp F11  &kp F12  &out OUT_USB  &out OUT_BLE  &bt BT_NXT  &trans  &trans         &kp DOWN_ARROW  &kp LEFT_ARROW    &kp RIGHT_ARROW  &kp LS(LEFT_ARROW)  &none          &none
-&none  &trans   &trans   &trans        &kp DELETE    &kp TAB     &trans  &kp LS(LG(R))  &kp LG(T)       &trans            &trans           &trans              &none          &none
+&none  &kp LS(LG(C))    &kp LC(LS(LBKT))    &kp LC(LS(EQUAL))    &none             &kp LALT                                &kp LG(MINUS)   &kp LG(NUMBER_0)  &kp LG(PLUS)     &kp LS(LG(T))       &kp LG(LA(W))  &none
+&none  &kp LG(LBKT)     &none               &kp LS(LG(LBKT))    &kp LS(LG(RBKT))  &kp LG(TAB)      &none   &none          &kp UP_ARROW    &mkp LCLK         &mkp RCLK        &kp LG(L)           &kp LG(W)      &none
+&none  &none            &kp LC(LS(LA(D)))   &kp LC(LS(LA(G)))    &kp LG(N1)        &kp LG(F)        &trans  &trans         &kp DOWN_ARROW  &kp LEFT_ARROW    &kp RIGHT_ARROW  &kp LS(LEFT_ARROW)  &none          &none
+&none  &trans           &trans              &trans               &trans            &trans           &kp LC(LG(Q))  &kp LS(LG(R))  &kp LG(T)       &trans            &trans           &trans              &none          &none
             >;
         };
 
