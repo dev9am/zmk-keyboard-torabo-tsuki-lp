@@ -53,10 +53,10 @@
         layer_2 {
             bindings = <
 &none  &none             &none             &none       &none       &none                            &none              &none         &none         &none         &none      &none
-&none  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(N3)  &kp LS(N4)  &kp LS(F11)                      &kp NUMBER_7       &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp EQUAL  &none
-&none  &kp N1            &kp N2            &kp N3      &kp N4      &kp N5       &none   &none       &kp NUMBER_4       &kp NUMBER_5  &kp NUMBER_6  &kp MINUS     &kp SLASH  &none
-&none  &kp N6            &kp N7            &kp N8      &kp N9      &kp N0       &trans  &trans      &kp NUMBER_1       &kp NUMBER_2  &kp NUMBER_3  &kp PLUS      &none      &none
-&none  &trans            &trans            &trans      &trans      &trans       &trans  &kp DELETE  &kp RIGHT_COMMAND  &none         &trans        &trans        &none      &none
+&none  &kp C_MUTE        &kp LC(LS(G))      &kp LS(LG(N4))      &kp LC(LS(LG(N4)))  &kp F11                              &kp NUMBER_7       &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp EQUAL  &none
+&none  &kp C_VOLUME_DOWN &kp LS(LG(E))      &kp LC(LEFT)        &kp LC(RIGHT)       &kp LC(UP)           &none   &none       &kp NUMBER_4       &kp NUMBER_5  &kp NUMBER_6  &kp MINUS     &kp SLASH  &none
+&none  &kp C_VOLUME_UP   &none              &kp LC(LA(LEFT))    &kp LC(LA(RIGHT))   &kp LC(LA(ENTER))    &trans  &trans      &kp NUMBER_1       &kp NUMBER_2  &kp NUMBER_3  &kp PLUS      &none      &none
+&none  &trans            &trans             &trans              &trans              &trans               &trans  &kp DELETE  &kp RIGHT_COMMAND  &none         &trans        &trans        &none      &none
             >;
         };
 
@@ -73,7 +73,7 @@
         layer_4 {
             bindings = <
 &none  &none   &none   &none   &none   &none                   &none   &none   &none   &none   &none   &none
-&none  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &none
+&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                  &trans  &trans  &trans  &trans  &trans  &none
 &none  &trans  &trans  &trans  &trans  &trans  &none   &none   &trans  &trans  &trans  &trans  &trans  &none
 &none  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &none   &none
 &none  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &none   &none
