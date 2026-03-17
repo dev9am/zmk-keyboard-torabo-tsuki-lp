@@ -8,7 +8,7 @@
 
     scroller {
         layers = <3>;
-        input-processors = <&zip_scroll_acceleration 3 0>, <&zip_xy_scaler 1 2>, <&zip_xy_to_scroll_mapper>;
+        input-processors = <&zip_scroll_acceleration 3 0>, <&zip_xy_scaler 1 4>, <&zip_xy_to_scroll_mapper>;
     };
 };
 
