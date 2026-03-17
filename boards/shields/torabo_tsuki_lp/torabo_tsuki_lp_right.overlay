@@ -1,13 +1,14 @@
 #include "torabo_tsuki_lp.dtsi"
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
+#include "../../../dts/input/processors/scroll_acceleration.dtsi"
 
 &pointing_listener {
     input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
 
     scroller {
         layers = <3>;
-        input-processors = <&zip_xy_scaler 1 2>, <&zip_xy_to_scroll_mapper>;
+        input-processors = <&zip_scroll_acceleration 3 0>, <&zip_xy_scaler 1 2>, <&zip_xy_to_scroll_mapper>;
     };
 };
 

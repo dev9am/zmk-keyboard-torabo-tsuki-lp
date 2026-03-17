@@ -1,0 +1,16 @@
+# Copyright (c) 2025
+# SPDX-License-Identifier: MIT
+
+description: Input Processor for sigmoid-based scroll acceleration
+
+compatible: "zmk,input-processor-scroll-acceleration"
+
+include: ip_two_param.yaml
+
+properties:
+  type:
+    type: int
+    required: true
+  codes:
+    type: array
+    required: true
