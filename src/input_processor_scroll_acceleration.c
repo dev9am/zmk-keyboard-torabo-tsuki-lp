@@ -6,7 +6,7 @@
  * Inspired by kloir-z/zmk-pmw3610-driver scroll-acceleration-feature.
  *
  * param1: sensitivity (1-10, higher = more acceleration)
- * param2: not used (reserved, pass 0)
+ * param2: threshold (speed value at which acceleration reaches 50%, 0 = default 500)
  */
 
 #define DT_DRV_COMPAT zmk_input_processor_scroll_acceleration
@@ -14,11 +14,15 @@
 #include <zephyr/kernel.h>
 #include <zephyr/device.h>
 #include <drivers/input_processor.h>
-#include <math.h>
 
 #include <zephyr/logging/log.h>
 
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
+
+#define DEFAULT_THRESHOLD 500
+#define MAX_DELTA_TIME_MS 100
+#define SENSITIVITY_MIN 1
+#define SENSITIVITY_MAX 10
 
 struct scroll_accel_config {
     uint8_t type;
@@ -28,8 +32,21 @@ struct scroll_accel_config {
 
 struct scroll_accel_data {
     int64_t last_event_time;
-    int32_t last_value;
 };
+
+static bool event_matches(const struct scroll_accel_config *cfg, struct input_event *event) {
+    if (event->type != cfg->type) {
+        return false;
+    }
+
+    for (int i = 0; i < cfg->codes_len; i++) {
+        if (cfg->codes[i] == event->code) {
+            return true;
+        }
+    }
+
+    return false;
+}
 
 static int scroll_accel_handle_event(const struct device *dev, struct input_event *event,
                                      uint32_t param1, uint32_t param2,
@@ -37,68 +54,44 @@ static int scroll_accel_handle_event(const struct device *dev, struct input_even
     const struct scroll_accel_config *cfg = dev->config;
     struct scroll_accel_data *data = dev->data;
 
-    if (event->type != cfg->type) {
-        return ZMK_INPUT_PROC_CONTINUE;
-    }
-
-    bool matched = false;
-    for (int i = 0; i < cfg->codes_len; i++) {
-        if (cfg->codes[i] == event->code) {
-            matched = true;
-            break;
-        }
-    }
-
-    if (!matched) {
+    if (!event_matches(cfg, event)) {
         return ZMK_INPUT_PROC_CONTINUE;
     }
 
     int32_t value = event->value;
-    int32_t movement = abs(value);
     int64_t current_time = k_uptime_get();
     int64_t delta_time = data->last_event_time > 0 ?
                          current_time - data->last_event_time : 0;
 
-    if (delta_time > 0 && delta_time < 100) {
-        /* Calculate speed based on movement and time delta */
-        int32_t speed_x100 = (movement * 100) / (int32_t)delta_time;
+    data->last_event_time = current_time;
 
-        /* Sigmoid acceleration: 1 + (sensitivity - 1) * sigmoid(speed)
-         * Using integer approximation of sigmoid: speed / (speed + threshold)
-         * This avoids floating point and expf() which may not be available.
-         *
-         * sensitivity (param1): 1-10, controls max acceleration multiplier
-         * threshold: controls how quickly acceleration ramps up
-         */
-        int32_t sensitivity = (int32_t)param1;
-        if (sensitivity < 1) sensitivity = 1;
-        if (sensitivity > 10) sensitivity = 10;
-
-        int32_t threshold = 500; /* speed_x100 value at which acceleration is 50% */
-
-        /* Integer sigmoid approximation: speed / (speed + threshold)
-         * Result is 0-100 (percentage) */
-        int32_t sigmoid_pct = (speed_x100 * 100) / (speed_x100 + threshold);
-
-        /* acceleration = 100 + (sensitivity - 1) * sigmoid_pct
-         * This gives a multiplier in percentage (100 = 1x) */
-        int32_t accel_pct = 100 + (sensitivity - 1) * sigmoid_pct;
-
-        int32_t new_value = (value * accel_pct) / 100;
-
-        /* Preserve minimum movement */
-        if (abs(value) >= 1 && abs(new_value) < 1) {
-            new_value = value;
-        }
-
-        LOG_DBG("scroll accel: value=%d speed=%d sigmoid=%d accel=%d%% result=%d",
-                value, speed_x100, sigmoid_pct, accel_pct, new_value);
-
-        event->value = new_value;
+    if (delta_time <= 0 || delta_time >= MAX_DELTA_TIME_MS) {
+        return ZMK_INPUT_PROC_CONTINUE;
     }
 
-    data->last_event_time = current_time;
-    data->last_value = value;
+    int32_t sensitivity = CLAMP((int32_t)param1, SENSITIVITY_MIN, SENSITIVITY_MAX);
+    int32_t threshold = param2 > 0 ? (int32_t)param2 : DEFAULT_THRESHOLD;
+
+    /* Speed scaled by 100 to avoid floating point */
+    int32_t speed_x100 = (abs(value) * 100) / (int32_t)delta_time;
+
+    /* Integer sigmoid approximation: speed / (speed + threshold) → 0-100% */
+    int32_t sigmoid_pct = (speed_x100 * 100) / (speed_x100 + threshold);
+
+    /* Multiplier in percentage: 100% at rest, up to (sensitivity * 100)% at max speed */
+    int32_t accel_pct = 100 + (sensitivity - 1) * sigmoid_pct;
+
+    int32_t new_value = (value * accel_pct) / 100;
+
+    /* Preserve minimum movement direction */
+    if (new_value == 0 && value != 0) {
+        new_value = value;
+    }
+
+    LOG_DBG("scroll accel: value=%d speed=%d sigmoid=%d%% accel=%d%% result=%d",
+            value, speed_x100, sigmoid_pct, accel_pct, new_value);
+
+    event->value = new_value;
 
     return ZMK_INPUT_PROC_CONTINUE;
 }
@@ -108,10 +101,7 @@ static struct zmk_input_processor_driver_api scroll_accel_driver_api = {
 };
 
 #define SCROLL_ACCEL_INST(n)                                                                       \
-    static struct scroll_accel_data scroll_accel_data_##n = {                                      \
-        .last_event_time = 0,                                                                      \
-        .last_value = 0,                                                                           \
-    };                                                                                             \
+    static struct scroll_accel_data scroll_accel_data_##n = {};                                    \
     static const struct scroll_accel_config scroll_accel_config_##n = {                            \
         .type = DT_INST_PROP_OR(n, type, INPUT_EV_REL),                                            \
         .codes_len = DT_INST_PROP_LEN(n, codes),                                                   \

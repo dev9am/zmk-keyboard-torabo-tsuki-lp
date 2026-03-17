@@ -32,51 +32,51 @@
 
         layer_0 {
             bindings = <
-&none  &none             &none         &none         &none             &none                                    &none        &none  &none  &none      &none              &none
-&none  &kp MINUS         &kp L         &kp U         &kp PERIOD        &kp ESC                                  &kp F        &kp W  &kp R  &kp Y      &kp P              &none
-&none  &mt LCTRL E       &kp I         &kp A         &kp O             &kp COMMA    &none      &none            &kp K        &kp T  &kp N  &kp S      &mt RCTRL H        &none
-&none  &mt LEFT_SHIFT Q  &kp Z         &kp X         &kp C             &kp V        &kp LANGUAGE_2  &kp LANGUAGE_1            &kp G        &kp D  &kp M  &kp J      &mt RIGHT_SHIFT B  &none
-&none  &kp F7            &kp F10       &kp LEFT_ALT  &kp LEFT_COMMAND  &lt 3 SPACE  &lt 2 TAB  &lt 4 BACKSPACE  &lt 1 ENTER  &none  &none  &mkp LCLK  &mkp RCLK          &none
+&none  &none             &none    &none             &none             &none                                       &none        &none  &none  &none      &none              &none
+&none  &kp MINUS         &kp L    &kp U             &kp PERIOD        &kp ESC                                     &kp F        &kp W  &kp R  &kp Y      &kp P              &none
+&none  &mt LCTRL E       &kp I    &kp A             &kp O             &kp COMMA      &none          &none         &kp K        &kp T  &kp N  &kp S      &mt RCTRL H        &none
+&none  &mt LEFT_SHIFT Q  &kp Z    &kp X             &kp C             &kp V          &kp LANGUAGE_2 &kp LANGUAGE_1 &kp G       &kp D  &kp M  &kp J      &mt RIGHT_SHIFT B  &none
+&none  &kp F7            &kp F10  &kp LEFT_ALT      &kp LEFT_COMMAND  &lt 3 SPACE    &lt 2 TAB      &lt 4 BACKSPACE &lt 1 ENTER &none &none  &mkp LCLK  &mkp RCLK          &none
             >;
         };
 
         layer_1 {
             bindings = <
-&none  &none             &none            &none              &none                 &none                                             &none              &none                  &none            &none             &none              &none
-&none  &kp QUESTION      &kp EXCLAMATION  &kp AMPERSAND      &kp PIPE              &kp NON_US_BACKSLASH                              &kp PLUS           &kp ASTERISK           &kp EQUAL        &kp SLASH         &kp PERCENT        &none
-&none  &kp LEFT_BRACKET  &kp LESS_THAN    &kp LEFT_BRACE     &kp LEFT_PARENTHESIS  &kp TILDE             &none           &none       &kp GRAVE          &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp GREATER_THAN  &kp RIGHT_BRACKET  &none
-&none  &trans            &kp DOLLAR       &kp HASH           &kp COLON             &kp SQT               &trans          &trans      &kp DOUBLE_QUOTES  &kp SEMICOLON          &kp AT_SIGN      &trans            &none              &none
-&none  &trans            &trans           &kp LS(LA(LC(B)))  &trans                &kp LANGUAGE_2        &kp LANGUAGE_1  &kp DELETE  &trans             &trans                 &trans           &trans            &none              &none
+&none  &none            &none            &none              &none                 &none                                          &none              &none                  &none            &none             &none              &none
+&none  &kp QUESTION     &kp EXCLAMATION  &kp AMPERSAND      &kp PIPE              &kp NON_US_BACKSLASH                           &kp PLUS           &kp ASTERISK           &kp EQUAL        &kp SLASH         &kp PERCENT        &none
+&none  &kp LEFT_BRACKET &kp LESS_THAN    &kp LEFT_BRACE     &kp LEFT_PARENTHESIS  &kp TILDE              &none       &none       &kp GRAVE          &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp GREATER_THAN  &kp RIGHT_BRACKET  &none
+&none  &trans           &kp DOLLAR       &kp HASH           &kp COLON             &kp SQT                &trans      &trans      &kp DOUBLE_QUOTES  &kp SEMICOLON          &kp AT_SIGN      &trans            &none              &none
+&none  &trans           &trans           &kp LS(LA(LC(B)))  &trans                &kp LANGUAGE_2         &kp LANGUAGE_1 &kp DELETE &trans            &trans                 &trans           &trans            &none              &none
             >;
         };
 
         layer_2 {
             bindings = <
-&none  &none             &none             &none       &none       &none                            &none              &none         &none         &none         &none      &none
-&none  &kp C_MUTE        &kp LC(LS(G))      &kp LS(LG(N4))      &kp LC(LS(LG(N4)))  &kp F11                              &kp NUMBER_7       &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp EQUAL  &none
-&none  &kp C_VOLUME_DOWN &kp LS(LG(E))      &kp LC(LEFT)        &kp LC(RIGHT)       &kp LC(UP)           &none   &none       &kp NUMBER_4       &kp NUMBER_5  &kp NUMBER_6  &kp MINUS     &kp SLASH  &none
-&none  &kp C_VOLUME_UP   &none              &kp LC(LA(LEFT))    &kp LC(LA(RIGHT))   &kp LC(LA(ENTER))    &trans  &trans      &kp NUMBER_1       &kp NUMBER_2  &kp NUMBER_3  &kp PLUS      &none      &none
-&none  &trans            &trans             &trans              &trans              &trans               &trans  &kp DELETE  &kp RIGHT_COMMAND  &none         &trans        &trans        &none      &none
+&none  &none              &none          &none             &none                &none                                    &none              &none         &none         &none         &none      &none
+&none  &kp C_MUTE         &kp LC(LS(G))  &kp LS(LG(N4))   &kp LC(LS(LG(N4)))  &kp F11                                  &kp NUMBER_7       &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp EQUAL  &none
+&none  &kp C_VOLUME_DOWN  &kp LS(LG(E))  &kp LC(LEFT)      &kp LC(RIGHT)       &kp LC(UP)          &none   &none        &kp NUMBER_4       &kp NUMBER_5  &kp NUMBER_6  &kp MINUS     &kp SLASH  &none
+&none  &kp C_VOLUME_UP    &none          &kp LC(LA(LEFT))  &kp LC(LA(RIGHT))   &kp LC(LA(ENTER))   &trans  &trans       &kp NUMBER_1       &kp NUMBER_2  &kp NUMBER_3  &kp PLUS      &none      &none
+&none  &trans             &trans         &trans            &trans              &trans              &trans  &kp DELETE   &kp RIGHT_COMMAND  &none         &trans        &trans        &none      &none
             >;
         };
 
         layer_3 {
             bindings = <
-&none  &none    &none    &none         &none         &none                              &none           &none             &none            &none               &none          &none
-&none  &kp LS(LG(C))    &kp LC(LS(LBKT))    &kp LC(LS(EQUAL))    &none             &kp LALT                                &kp LG(MINUS)   &kp LG(NUMBER_0)  &kp LG(PLUS)     &kp LS(LG(T))       &kp LG(LA(W))  &none
-&none  &kp LG(LBKT)     &none               &kp LS(LG(LBKT))    &kp LS(LG(RBKT))  &kp LG(TAB)      &none   &none          &kp UP_ARROW    &mkp LCLK         &mkp RCLK        &kp LG(L)           &kp LG(W)      &none
-&none  &none            &kp LC(LS(LA(D)))   &kp LC(LS(LA(G)))    &kp LG(N1)        &kp LG(F)        &trans  &trans         &kp DOWN_ARROW  &kp LEFT_ARROW    &kp RIGHT_ARROW  &kp LS(LEFT_ARROW)  &none          &none
-&none  &trans           &trans              &trans               &trans            &trans           &kp LC(LG(Q))  &kp LS(LG(R))  &kp LG(T)       &trans            &trans           &trans              &none          &none
+&none  &none          &none               &none               &none             &none                                     &none           &none             &none            &none               &none          &none
+&none  &kp LS(LG(C))  &kp LC(LS(LBKT))    &kp LC(LS(EQUAL))   &none             &kp LALT                                  &kp LG(MINUS)   &kp LG(NUMBER_0)  &kp LG(PLUS)     &kp LS(LG(T))       &kp LG(LA(W))  &none
+&none  &kp LG(LBKT)   &none               &kp LS(LG(LBKT))    &kp LS(LG(RBKT))  &kp LG(TAB)       &none   &none          &kp UP_ARROW    &mkp LCLK         &mkp RCLK        &kp LG(L)           &kp LG(W)      &none
+&none  &none          &kp LC(LS(LA(D)))   &kp LC(LS(LA(G)))    &kp LG(N1)        &kp LG(F)         &trans  &trans         &kp DOWN_ARROW  &kp LEFT_ARROW    &kp RIGHT_ARROW  &kp LS(LEFT_ARROW)  &none          &none
+&none  &trans         &trans              &trans               &trans            &trans            &kp LC(LG(Q)) &kp LS(LG(R)) &kp LG(T) &trans           &trans           &trans              &none          &none
             >;
         };
 
         layer_4 {
             bindings = <
-&none  &none         &none         &none         &none         &none                           &none   &none   &none   &none   &none   &none
-&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                  &trans  &trans  &trans  &trans  &trans  &none
-&none  &trans  &trans  &trans  &trans  &out OUT_BLE  &none   &none   &trans  &trans  &trans  &trans  &trans  &none
-&none  &trans  &trans  &trans  &trans  &out OUT_USB  &trans  &trans  &trans  &trans  &trans  &trans  &none   &none
-&none  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &none   &none
+&none  &none         &none         &none         &none         &none                          &none   &none   &none   &none   &none   &none
+&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                 &trans  &trans  &trans  &trans  &trans  &none
+&none  &trans        &trans        &trans        &trans        &out OUT_BLE  &none   &none    &trans  &trans  &trans  &trans  &trans  &none
+&none  &trans        &trans        &trans        &trans        &out OUT_USB  &trans  &trans   &trans  &trans  &trans  &trans  &none   &none
+&none  &trans        &trans        &trans        &trans        &trans        &trans  &trans   &trans  &trans  &trans  &trans  &none   &none
             >;
         };
     };
