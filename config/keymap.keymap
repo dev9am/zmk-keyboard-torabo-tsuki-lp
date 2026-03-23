@@ -17,13 +17,13 @@
         };
     };
 
-    combos {
+combos {
         compatible = "zmk,combos";
 
         bt_clear {
             bindings = <&bt BT_CLR>;
-            key-positions = <28 29>;
-            layers = <2>;
+            key-positions = <54 55>;
+            layers = <4>;
         };
     };
 
@@ -63,20 +63,20 @@
         layer_3 {
             bindings = <
 &none  &none          &none               &none               &none             &none                                     &none           &none             &none            &none               &none          &none
-&none  &kp LS(LG(C))  &kp LC(LS(LBKT))    &kp LC(LS(EQUAL))   &none             &kp LALT                                  &kp LG(MINUS)   &kp LG(NUMBER_0)  &kp LG(PLUS)     &kp LS(LG(T))       &kp LG(LA(W))  &none
-&none  &kp LG(LBKT)   &none               &kp LS(LG(LBKT))    &kp LS(LG(RBKT))  &kp LG(TAB)       &none   &none          &kp UP_ARROW    &mkp LCLK         &mkp RCLK        &kp LG(L)           &kp LG(W)      &none
-&none  &none          &kp LC(LS(LA(D)))   &kp LC(LS(LA(G)))    &kp LG(N1)        &kp LG(F)         &trans  &trans         &kp DOWN_ARROW  &kp LEFT_ARROW    &kp RIGHT_ARROW  &kp LS(LEFT_ARROW)  &none          &none
-&none  &trans         &trans              &trans               &trans            &trans            &kp LC(LG(Q)) &kp LS(LG(R)) &kp LG(T) &trans           &trans           &trans              &none          &none
+&none  &kp LS(LG(C))  &kp LC(LS(LBKT))    &kp LC(LS(EQUAL))   &none             &none                                  &kp LG(MINUS)   &kp LG(NUMBER_0)  &kp LG(PLUS)     &kp LS(LG(T))       &mkp MCLK  &none
+&none  &kp LG(LBKT)   &kp LG(RBKT)               &kp LS(LG(LBKT))    &kp LS(LG(RBKT))  &kp LG(TAB)       &none   &none          &kp UP_ARROW    &mkp LCLK         &mkp RCLK        &kp LG(L)           &kp LG(W)      &none
+&none  &none          &kp LC(LS(LA(D)))   &kp LC(LS(LA(G)))    &kp LG(N1)        &kp LG(F)         &trans  &trans         &kp DOWN_ARROW  &kp LEFT_ARROW    &kp RIGHT_ARROW  &kp LS(LEFT_ARROW)  &kp LS(RIGHT_ARROW)  &none
+&none  &trans         &trans              &trans               &trans            &trans            &kp LC(LG(Q)) &kp LS(LG(R)) &kp LG(T) &trans           &trans           &kp LG(LA(I))       &none          &none
             >;
         };
 
         layer_4 {
             bindings = <
 &none  &none         &none         &none         &none         &none                          &none   &none   &none   &none   &none   &none
-&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                 &trans  &trans  &trans  &trans  &trans  &none
-&none  &trans        &trans        &trans        &trans        &out OUT_BLE  &none   &none    &trans  &trans  &trans  &trans  &trans  &none
-&none  &trans        &trans        &trans        &trans        &out OUT_USB  &trans  &trans   &trans  &trans  &trans  &trans  &none   &none
-&none  &trans        &trans        &trans        &trans        &trans        &trans  &trans   &trans  &trans  &trans  &trans  &none   &none
+&none  &bt BT_SEL 0  &trans        &trans        &trans        &trans                       &trans  &trans  &trans  &trans  &trans  &none
+&none  &bt BT_SEL 1  &trans        &trans        &trans        &trans        &none   &none    &trans  &trans  &trans  &trans  &trans  &none
+&none  &bt BT_SEL 2  &trans        &trans        &trans        &trans        &trans  &kp LG(N)   &kp LG(D)  &trans  &trans  &trans  &none   &none
+&none  &bt BT_SEL 3  &out OUT_BLE  &out OUT_USB  &trans        &trans        &trans  &trans   &kp LS(LG(D))  &trans  &trans  &trans  &none   &none
             >;
         };
     };
